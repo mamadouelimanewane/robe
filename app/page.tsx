@@ -7,195 +7,184 @@ import Link from 'next/link';
 
 export default function HomePage() {
     return (
-        <div className="min-h-screen bg-white font-sans">
+        <div className="min-h-screen bg-white font-sans text-slate-900">
             <Header />
 
-            {/* HERO SECTION */}
-            <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
-                {/* Background Image */}
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=2574&auto=format&fit=crop"
-                        alt="Élégante femme africaine"
-                        className="w-full h-full object-cover brightness-[0.65]"
-                    />
-                </div>
-
-                <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-amber-500/20 backdrop-blur-md border border-amber-500/40 text-amber-200 text-sm font-bold tracking-widest uppercase mb-6 animate-fade-in-up">
-                        🇸🇳 L'Excellence Sénégalaise
-                    </span>
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-elegant font-bold text-white mb-6 leading-tight animate-fade-in-up delay-100">
-                        Rayonnez en <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500">
-                            Grande Dame.
-                        </span>
-                    </h1>
-                    <p className="text-lg md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed animate-fade-in-up delay-200">
-                        La première plateforme de location de tenues de luxe à Dakar. <br className="hidden md:block" />
-                        Boubous, Robes de soirée, et Tenues traditionnelles pour vos plus beaux événements.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-5 justify-center animate-fade-in-up delay-300">
-                        <Link
-                            href="/collection"
-                            className="px-8 py-4 bg-white text-slate-900 font-bold rounded-full hover:bg-amber-50 transition-all transform hover:scale-105 shadow-xl flex items-center justify-center gap-2"
-                        >
-                            Voir la Collection <ArrowRight className="w-5 h-5" />
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* WHY US SECTION */}
-            <section className="py-24 bg-slate-50">
+            {/* HERO SECTION - SPLIT LAYOUT (Texte Gauche / Images Droite) */}
+            <section className="relative pt-8 pb-20 lg:pt-12 lg:pb-28 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-elegant font-bold text-slate-900 mb-6">
-                            L'Expérience RobeSénégal
-                        </h2>
-                        <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-                            Nous savons qu'au Sénégal, l'habillement est un art. Nous le traitons avec le respect qu'il mérite.
-                        </p>
-                    </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                        {/* Feature 1 */}
-                        <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
-                            <div className="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-600 mb-6 group-hover:scale-110 transition-transform">
-                                <Shield className="w-7 h-7" />
-                            </div>
-                            <h3 className="text-xl font-bold mb-3 text-slate-900">Qualité Exceptionnelle</h3>
-                            <p className="text-gray-600 leading-relaxed">
-                                Bazin Riche, Soie, Dentelle Autrichienne... Nos tenues sont sélectionnées pour leur prestance et entretenues par les meilleurs pressings de Dakar.
+                        {/* Colonne Texte (Gauche) */}
+                        <div className="max-w-2xl">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-800 text-sm font-bold tracking-widest uppercase mb-6">
+                                🇸🇳 Dakar, Sénégal
+                            </span>
+                            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-elegant font-bold leading-tight mb-6 text-slate-900">
+                                L'Élégance <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-amber-500">
+                                    Sur Mesure.
+                                </span>
+                            </h1>
+                            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                                Louez des tenues de haute couture pour vos cérémonies.
+                                Boubous, Robes de soirée et Accessoires de luxe disponibles immédiatement à Dakar.
                             </p>
+
+                            <div className="flex flex-wrap gap-4">
+                                <Link
+                                    href="/collection"
+                                    className="px-8 py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 transition-all flex items-center"
+                                >
+                                    Voir le catalogue <ArrowRight className="w-5 h-5 ml-2" />
+                                </Link>
+                                <Link
+                                    href="/comment-ca-marche"
+                                    className="px-8 py-4 bg-white border-2 border-slate-200 text-slate-900 font-bold rounded-full hover:bg-slate-50 transition-all"
+                                >
+                                    Comment ça marche ?
+                                </Link>
+                            </div>
+
+                            {/* Trust Indicators - Mini ligne horizontale */}
+                            <div className="mt-10 flex items-center gap-6 text-sm text-gray-500 font-medium">
+                                <div className="flex items-center gap-2">
+                                    <Shield className="w-5 h-5 text-amber-500" /> Qualité Premium
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Clock className="w-5 h-5 text-amber-500" /> Livraison 24h
+                                </div>
+                            </div>
                         </div>
 
-                        {/* Feature 2 */}
-                        <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
-                            <div className="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition-transform">
-                                <Clock className="w-7 h-7" />
+                        {/* Colonne Images (Droite - Mosaïque) */}
+                        <div className="relative hidden lg:block h-[600px]">
+                            {/* Image Principale */}
+                            <div className="absolute top-0 right-0 w-3/4 h-[85%] rounded-[2rem] overflow-hidden shadow-2xl z-10">
+                                <img
+                                    src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Robe de soirée élégante"
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
-                            <h3 className="text-xl font-bold mb-3 text-slate-900">Livraison Express</h3>
-                            <p className="text-gray-600 leading-relaxed">
-                                Commandez aujourd'hui, recevez demain. Nous livrons partout à Dakar (Plateau, Almadies, Mermoz, Sacré-Cœur...).
-                            </p>
+
+                            {/* Petite Image Flottante (Gauche Bas) */}
+                            <div className="absolute bottom-0 left-0 w-1/2 h-[50%] rounded-[2rem] overflow-hidden shadow-2xl z-20 border-4 border-white">
+                                <img
+                                    src="https://images.unsplash.com/photo-1546522306-69a48f6828af?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Tenue traditionnelle chic"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+
+                            {/* Cercle Décoratif */}
+                            <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-amber-400 rounded-full blur-2xl opacity-20 -z-10"></div>
                         </div>
 
-                        {/* Feature 3 */}
-                        <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
-                            <div className="w-14 h-14 bg-pink-50 rounded-2xl flex items-center justify-center text-pink-600 mb-6 group-hover:scale-110 transition-transform">
-                                <Star className="w-7 h-7" />
-                            </div>
-                            <h3 className="text-xl font-bold mb-3 text-slate-900">Service Sur-Mesure</h3>
-                            <p className="text-gray-600 leading-relaxed">
-                                Notre équipe de retoucheuses s'assure que votre tenue vous va à la perfection. L'ajustement est inclus dans le service.
-                            </p>
+                        {/* Version Mobile de l'image (Une seule pour éviter le scroll vertical infini sur petit écran) */}
+                        <div className="lg:hidden rounded-2xl overflow-hidden shadow-lg h-[400px]">
+                            <img
+                                src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=1000&auto=format&fit=crop"
+                                alt="Femme africaine élégante"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
+
                     </div>
                 </div>
             </section>
 
-            {/* COLLECTIONS PREVIEW */}
-            <section className="py-24 bg-white">
+            {/* CATEGORIES GRID (3 Colonnes côte à côte) */}
+            <section className="py-16 bg-slate-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-end mb-12">
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-elegant font-bold text-slate-900 mb-2">Nos Univers</h2>
-                            <p className="text-gray-500">Trouvez la tenue parfaite pour chaque occasion.</p>
-                        </div>
-                        <Link href="/collection" className="hidden md:flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors">
-                            Tout voir <ArrowRight className="w-5 h-5 ml-2" />
-                        </Link>
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-elegant font-bold">Nos Collections</h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Card 1: Boubous */}
-                        <Link href="/collection?category=BOUBOUS" className="group cursor-pointer">
-                            <div className="relative h-[500px] rounded-2xl overflow-hidden mb-4 shadow-lg">
-                                <img
-                                    src="https://images.unsplash.com/photo-1620215869408-54b0e5170d7e?q=80&w=2670&auto=format&fit=crop"
-                                    alt="Boubous Traditionnels"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
-                                <div className="absolute bottom-6 left-6 text-white">
-                                    <h3 className="text-2xl font-bold font-elegant">Boubous & Traditions</h3>
-                                    <p className="text-sm text-gray-200 mt-1 opacity-100 transform translate-y-0 transition-all">L'élégance pure.</p>
-                                </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                        {/* Card 1 */}
+                        <Link href="/collection?category=BOUBOUS" className="group relative h-80 rounded-2xl overflow-hidden shadow-md">
+                            <img
+                                src="https://images.unsplash.com/photo-1620215869408-54b0e5170d7e?q=80&w=800&auto=format&fit=crop"
+                                alt="Boubous"
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+                            <div className="absolute bottom-0 left-0 p-6 text-white">
+                                <h3 className="text-2xl font-bold font-elegant">Boubous</h3>
+                                <p className="text-sm opacity-90">Tradition & Modernité</p>
                             </div>
                         </Link>
 
-                        {/* Card 2: Robes Soirée */}
-                        <Link href="/collection?category=ROBES_SOIREE" className="group cursor-pointer">
-                            <div className="relative h-[500px] rounded-2xl overflow-hidden mb-4 shadow-lg">
-                                <img
-                                    src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=2524&auto=format&fit=crop"
-                                    alt="Robes de Soirée"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
-                                <div className="absolute bottom-6 left-6 text-white">
-                                    <h3 className="text-2xl font-bold font-elegant">Robes de Soirée</h3>
-                                    <p className="text-sm text-gray-200 mt-1 opacity-100 transform translate-y-0 transition-all">Pour briller de mille feux.</p>
-                                </div>
+                        {/* Card 2 */}
+                        <Link href="/collection?category=ROBES_SOIREE" className="group relative h-80 rounded-2xl overflow-hidden shadow-md">
+                            <img
+                                src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=800&auto=format&fit=crop"
+                                alt="Soirée"
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+                            <div className="absolute bottom-0 left-0 p-6 text-white">
+                                <h3 className="text-2xl font-bold font-elegant">Soirée</h3>
+                                <p className="text-sm opacity-90">Brillez de mille feux</p>
                             </div>
                         </Link>
 
-                        {/* Card 3: Mariage */}
-                        <Link href="/collection?occasion=MARIAGE" className="group cursor-pointer md:col-span-2 lg:col-span-1">
-                            <div className="relative h-[500px] rounded-2xl overflow-hidden mb-4 shadow-lg">
-                                <img
-                                    src="https://images.unsplash.com/photo-1546522306-69a48f6828af?q=80&w=2574&auto=format&fit=crop"
-                                    alt="Mariages & Cérémonies"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
-                                <div className="absolute bottom-6 left-6 text-white">
-                                    <h3 className="text-2xl font-bold font-elegant">Mariages & Cérémonies</h3>
-                                    <p className="text-sm text-gray-200 mt-1 opacity-100 transform translate-y-0 transition-all">Soyez l'invitée parfaite.</p>
-                                </div>
+                        {/* Card 3 */}
+                        <Link href="/collection?occasion=MARIAGE" className="group relative h-80 rounded-2xl overflow-hidden shadow-md sm:col-span-2 lg:col-span-1">
+                            <img
+                                src="https://images.unsplash.com/photo-1546522306-69a48f6828af?q=80&w=800&auto=format&fit=crop"
+                                alt="Mariage"
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+                            <div className="absolute bottom-0 left-0 p-6 text-white">
+                                <h3 className="text-2xl font-bold font-elegant">Mariages</h3>
+                                <p className="text-sm opacity-90">L'invitée parfaite</p>
                             </div>
                         </Link>
-                    </div>
 
-                    <div className="mt-8 text-center md:hidden">
-                        <Link href="/collection" className="inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors">
-                            Tout voir <ArrowRight className="w-5 h-5 ml-2" />
-                        </Link>
                     </div>
                 </div>
             </section>
 
-            {/* CTA FOOTER */}
-            <section className="py-24 bg-slate-900 overflow-hidden relative">
-                <div className="absolute inset-0 z-0 opacity-10">
-                    <img
-                        src="https://www.transparenttextures.com/patterns/cubes.png"
-                        alt="Texture"
-                        className="w-full h-full object-cover"
-                    />
-                </div>
-                <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-                    <h2 className="text-4xl md:text-5xl font-elegant font-bold text-white mb-6">
-                        Votre prochaine tenue vous attend.
-                    </h2>
-                    <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-                        Rejoignez la communauté des "Driankés" modernes et accédez à un dressing de rêve illimité.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link
-                            href="/registre"
-                            className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-black transition-all"
-                        >
-                            Créer un compte
-                        </Link>
-                        <Link
-                            href="/collection"
-                            className="px-8 py-4 bg-amber-500 text-white font-bold rounded-full hover:bg-amber-600 transition-all shadow-lg shadow-amber-500/30"
-                        >
-                            Louer maintenant
-                        </Link>
+            {/* FEATURES BANNER (Horizontal) */}
+            <section className="py-16 bg-white border-t border-slate-100">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                        <div className="p-4">
+                            <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <Shield className="w-6 h-6" />
+                            </div>
+                            <h3 className="font-bold text-lg mb-2">Qualité Garantie</h3>
+                            <p className="text-gray-500 text-sm">Pressing inclus et état impeccable.</p>
+                        </div>
+                        <div className="p-4">
+                            <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <Clock className="w-6 h-6" />
+                            </div>
+                            <h3 className="font-bold text-lg mb-2">Livraison & Retour</h3>
+                            <p className="text-gray-500 text-sm">On livre et on récupère chez vous.</p>
+                        </div>
+                        <div className="p-4">
+                            <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <Star className="w-6 h-6" />
+                            </div>
+                            <h3 className="font-bold text-lg mb-2">Service Client</h3>
+                            <p className="text-gray-500 text-sm">Une équipe à votre écoute 7j/7.</p>
+                        </div>
                     </div>
+                </div>
+            </section>
+
+            {/* CTA FINAL */}
+            <section className="py-20 bg-slate-900 text-white text-center">
+                <div className="max-w-3xl mx-auto px-4">
+                    <h2 className="text-3xl md:text-4xl font-elegant font-bold mb-6">Prête à sublimer votre événement ?</h2>
+                    <Link href="/collection" className="inline-block px-10 py-4 bg-amber-500 text-white font-bold rounded-full hover:bg-amber-600 transition-colors shadow-lg shadow-amber-500/30">
+                        Découvrir la Collection
+                    </Link>
                 </div>
             </section>
 
