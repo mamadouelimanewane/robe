@@ -7,145 +7,193 @@ import Link from 'next/link';
 
 export default function HomePage() {
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white font-sans">
             <Header />
 
-            {/* Hero Section */}
-            <section className="relative h-[90vh] flex items-center overflow-hidden">
+            {/* HERO SECTION */}
+            <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
+                {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="https://images.unsplash.com/photo-1542596594-649edbc13630?q=80&w=2000"
-                        alt="Femme africaine souriante en tenue élégant"
-                        className="w-full h-full object-cover brightness-[0.6]"
+                        src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=2574&auto=format&fit=crop"
+                        alt="Élégante femme africaine"
+                        className="w-full h-full object-cover brightness-[0.65]"
                     />
                 </div>
 
-                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-                    <div className="max-w-2xl animate-fade-in-up">
-                        <span className="inline-block px-4 py-1 rounded-full bg-primary-500/20 backdrop-blur-md border border-primary-500/30 text-primary-200 text-sm font-semibold mb-6 tracking-wide uppercase">
-                            🇸🇳 L'élégance à la Sénégalaise
+                <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-amber-500/20 backdrop-blur-md border border-amber-500/40 text-amber-200 text-sm font-bold tracking-widest uppercase mb-6 animate-fade-in-up">
+                        🇸🇳 L'Excellence Sénégalaise
+                    </span>
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-elegant font-bold text-white mb-6 leading-tight animate-fade-in-up delay-100">
+                        Rayonnez en <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500">
+                            Grande Dame.
                         </span>
-                        <h1 className="text-5xl md:text-7xl font-elegant font-bold mb-6 leading-tight">
-                            Rayonnez en <br />
-                            <span className="gradient-text">Grande Dame.</span>
-                        </h1>
-                        <p className="text-lg md:text-xl text-gray-200 mb-10 leading-relaxed max-w-lg">
-                            Des Boubous riches aux Robes de soirée occidentales. Louez l'excellence pour vos Magals, Mariages et Galas sans vous ruiner.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <Link href="/collection" className="btn-primary text-center">
-                                Voir la Collection
-                            </Link>
-                            <Link href="/comment-ca-marche" className="px-8 py-3 rounded-lg border-2 border-white/50 backdrop-blur-sm hover:bg-white hover:text-black transition-all font-semibold text-center">
-                                Comment ça marche ?
-                            </Link>
-                        </div>
+                    </h1>
+                    <p className="text-lg md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed animate-fade-in-up delay-200">
+                        La première plateforme de location de tenues de luxe à Dakar. <br className="hidden md:block" />
+                        Boubous, Robes de soirée, et Tenues traditionnelles pour vos plus beaux événements.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-5 justify-center animate-fade-in-up delay-300">
+                        <Link
+                            href="/collection"
+                            className="px-8 py-4 bg-white text-slate-900 font-bold rounded-full hover:bg-amber-50 transition-all transform hover:scale-105 shadow-xl flex items-center justify-center gap-2"
+                        >
+                            Voir la Collection <ArrowRight className="w-5 h-5" />
+                        </Link>
                     </div>
                 </div>
             </section>
 
-            {/* Features */}
-            <section className="py-20 bg-slate-50 relative overflow-hidden">
-                {/* Decorative pattern */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-primary-100 rounded-full blur-[100px] opacity-30 -translate-y-1/2 translate-x-1/2"></div>
-
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-elegant font-bold text-slate-900 mb-4">Pourquoi Choisir RobeSénégal ?</h2>
-                        <p className="text-gray-600 max-w-2xl mx-auto">Nous connaissons les exigences des grandes cérémonies dakaroises.</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                        <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-shadow border border-slate-100 group">
-                            <div className="p-4 bg-primary-50 rounded-2xl w-fit text-primary-600 mb-6 group-hover:scale-110 transition-transform">
-                                <Shield className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4 font-elegant">Qualité "Thiébou Dieune"</h3>
-                            <p className="text-gray-600">Bazin riche, Soie naturelle, Dentelle autrichienne... Des matières nobles entretenues par les meilleurs pressings de la place.</p>
-                        </div>
-                        <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-shadow border border-slate-100 group">
-                            <div className="p-4 bg-gold-50 rounded-2xl w-fit text-gold-600 mb-6 group-hover:scale-110 transition-transform">
-                                <Clock className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4 font-elegant">Zéro Stress</h3>
-                            <p className="text-gray-600">Livraison express en 24H partout à Dakar (Plateau, Almadies, Mermoz...). On livre, vous portez, on récupère.</p>
-                        </div>
-                        <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-shadow border border-slate-100 group">
-                            <div className="p-4 bg-purple-50 rounded-2xl w-fit text-purple-600 mb-6 group-hover:scale-110 transition-transform">
-                                <Star className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4 font-elegant">Service Sur-Mesure</h3>
-                            <p className="text-gray-600">Besoin d'un ourlet ou d'un ajustement ? Notre équipe de tailleurs experts s'assure que tout tombe parfaitement.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Visual Mosaic Section */}
-            <section className="py-20 bg-white">
+            {/* WHY US SECTION */}
+            <section className="py-24 bg-slate-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-                            <img
-                                src="https://images.unsplash.com/photo-1546522306-69a48f6828af?q=80&w=1000"
-                                alt="Collection Robes Afro Chic"
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                            />
-                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
-                                <h3 className="text-white text-2xl font-elegant font-bold">Collection Afro-Chic</h3>
-                                <p className="text-gray-200 mt-2">Le mariage parfait entre tradition et modernité.</p>
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-elegant font-bold text-slate-900 mb-6">
+                            L'Expérience RobeSénégal
+                        </h2>
+                        <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+                            Nous savons qu'au Sénégal, l'habillement est un art. Nous le traitons avec le respect qu'il mérite.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                        {/* Feature 1 */}
+                        <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+                            <div className="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-600 mb-6 group-hover:scale-110 transition-transform">
+                                <Shield className="w-7 h-7" />
                             </div>
-                        </div>
-                        <div className="space-y-6">
-                            <h2 className="text-4xl font-elegant font-bold text-slate-900 leading-tight">
-                                Sublimez votre présence à chaque événement.
-                            </h2>
-                            <p className="text-lg text-gray-600">
-                                Que ce soit pour un mariage grandiose au King Fahd ou une soirée privée aux Almadies, nous avons la tenue qui fera tourner les têtes.
+                            <h3 className="text-xl font-bold mb-3 text-slate-900">Qualité Exceptionnelle</h3>
+                            <p className="text-gray-600 leading-relaxed">
+                                Bazin Riche, Soie, Dentelle Autrichienne... Nos tenues sont sélectionnées pour leur prestance et entretenues par les meilleurs pressings de Dakar.
                             </p>
-                            <ul className="space-y-4">
-                                <li className="flex items-center gap-3 text-gray-700">
-                                    <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600"><ArrowRight className="w-4 h-4" /></div>
-                                    <span>Plus de 500 modèles uniques</span>
-                                </li>
-                                <li className="flex items-center gap-3 text-gray-700">
-                                    <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600"><ArrowRight className="w-4 h-4" /></div>
-                                    <span>Nouveautés chaque semaine</span>
-                                </li>
-                                <li className="flex items-center gap-3 text-gray-700">
-                                    <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600"><ArrowRight className="w-4 h-4" /></div>
-                                    <span>Essayage à domicile disponible</span>
-                                </li>
-                            </ul>
-                            <div className="pt-4">
-                                <Link href="/registre" className="btn-secondary inline-block">
-                                    Créer mon compte gratuit
-                                </Link>
+                        </div>
+
+                        {/* Feature 2 */}
+                        <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+                            <div className="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition-transform">
+                                <Clock className="w-7 h-7" />
                             </div>
+                            <h3 className="text-xl font-bold mb-3 text-slate-900">Livraison Express</h3>
+                            <p className="text-gray-600 leading-relaxed">
+                                Commandez aujourd'hui, recevez demain. Nous livrons partout à Dakar (Plateau, Almadies, Mermoz, Sacré-Cœur...).
+                            </p>
+                        </div>
+
+                        {/* Feature 3 */}
+                        <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+                            <div className="w-14 h-14 bg-pink-50 rounded-2xl flex items-center justify-center text-pink-600 mb-6 group-hover:scale-110 transition-transform">
+                                <Star className="w-7 h-7" />
+                            </div>
+                            <h3 className="text-xl font-bold mb-3 text-slate-900">Service Sur-Mesure</h3>
+                            <p className="text-gray-600 leading-relaxed">
+                                Notre équipe de retoucheuses s'assure que votre tenue vous va à la perfection. L'ajustement est inclus dans le service.
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* CTA Section */}
-            <section className="py-24 bg-slate-900 text-white overflow-hidden relative">
-                <div className="absolute inset-0 z-0 opacity-20">
+            {/* COLLECTIONS PREVIEW */}
+            <section className="py-24 bg-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex justify-between items-end mb-12">
+                        <div>
+                            <h2 className="text-3xl md:text-4xl font-elegant font-bold text-slate-900 mb-2">Nos Univers</h2>
+                            <p className="text-gray-500">Trouvez la tenue parfaite pour chaque occasion.</p>
+                        </div>
+                        <Link href="/collection" className="hidden md:flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors">
+                            Tout voir <ArrowRight className="w-5 h-5 ml-2" />
+                        </Link>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {/* Card 1: Boubous */}
+                        <Link href="/collection?category=BOUBOUS" className="group cursor-pointer">
+                            <div className="relative h-[500px] rounded-2xl overflow-hidden mb-4 shadow-lg">
+                                <img
+                                    src="https://images.unsplash.com/photo-1620215869408-54b0e5170d7e?q=80&w=2670&auto=format&fit=crop"
+                                    alt="Boubous Traditionnels"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                                <div className="absolute bottom-6 left-6 text-white">
+                                    <h3 className="text-2xl font-bold font-elegant">Boubous & Traditions</h3>
+                                    <p className="text-sm text-gray-200 mt-1 opacity-100 transform translate-y-0 transition-all">L'élégance pure.</p>
+                                </div>
+                            </div>
+                        </Link>
+
+                        {/* Card 2: Robes Soirée */}
+                        <Link href="/collection?category=ROBES_SOIREE" className="group cursor-pointer">
+                            <div className="relative h-[500px] rounded-2xl overflow-hidden mb-4 shadow-lg">
+                                <img
+                                    src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=2524&auto=format&fit=crop"
+                                    alt="Robes de Soirée"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                                <div className="absolute bottom-6 left-6 text-white">
+                                    <h3 className="text-2xl font-bold font-elegant">Robes de Soirée</h3>
+                                    <p className="text-sm text-gray-200 mt-1 opacity-100 transform translate-y-0 transition-all">Pour briller de mille feux.</p>
+                                </div>
+                            </div>
+                        </Link>
+
+                        {/* Card 3: Mariage */}
+                        <Link href="/collection?occasion=MARIAGE" className="group cursor-pointer md:col-span-2 lg:col-span-1">
+                            <div className="relative h-[500px] rounded-2xl overflow-hidden mb-4 shadow-lg">
+                                <img
+                                    src="https://images.unsplash.com/photo-1546522306-69a48f6828af?q=80&w=2574&auto=format&fit=crop"
+                                    alt="Mariages & Cérémonies"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                                <div className="absolute bottom-6 left-6 text-white">
+                                    <h3 className="text-2xl font-bold font-elegant">Mariages & Cérémonies</h3>
+                                    <p className="text-sm text-gray-200 mt-1 opacity-100 transform translate-y-0 transition-all">Soyez l'invitée parfaite.</p>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+
+                    <div className="mt-8 text-center md:hidden">
+                        <Link href="/collection" className="inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors">
+                            Tout voir <ArrowRight className="w-5 h-5 ml-2" />
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA FOOTER */}
+            <section className="py-24 bg-slate-900 overflow-hidden relative">
+                <div className="absolute inset-0 z-0 opacity-10">
                     <img
-                        src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?q=80&w=2000"
-                        alt="Background Texture"
+                        src="https://www.transparenttextures.com/patterns/cubes.png"
+                        alt="Texture"
                         className="w-full h-full object-cover"
                     />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-900 to-slate-900/80 z-0"></div>
-
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                    <div className="max-w-3xl mx-auto">
-                        <h2 className="text-4xl md:text-5xl font-elegant font-bold mb-6 text-white">Prête à briller ?</h2>
-                        <p className="text-xl text-gray-300 mb-10">
-                            Rejoignez la communauté des "Driankés" modernes.
-                        </p>
-                        <Link href="/collection" className="inline-flex items-center gap-2 bg-white text-black px-10 py-4 rounded-xl font-bold hover:bg-gold-500 hover:text-white transition-all transform hover:scale-105 shadow-xl">
-                            Voir le catalogue <ArrowRight className="w-5 h-5" />
+                <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+                    <h2 className="text-4xl md:text-5xl font-elegant font-bold text-white mb-6">
+                        Votre prochaine tenue vous attend.
+                    </h2>
+                    <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                        Rejoignez la communauté des "Driankés" modernes et accédez à un dressing de rêve illimité.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Link
+                            href="/registre"
+                            className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-black transition-all"
+                        >
+                            Créer un compte
+                        </Link>
+                        <Link
+                            href="/collection"
+                            className="px-8 py-4 bg-amber-500 text-white font-bold rounded-full hover:bg-amber-600 transition-all shadow-lg shadow-amber-500/30"
+                        >
+                            Louer maintenant
                         </Link>
                     </div>
                 </div>

@@ -45,11 +45,11 @@ export default function Footer() {
                     <div>
                         <h4 className="font-semibold mb-4">Catégories</h4>
                         <ul className="space-y-2 text-sm text-gray-400">
-                            <li><Link href="/categories/robes-longues" className="hover:text-white transition-colors">Robes Longues</Link></li>
-                            <li><Link href="/categories/robes-courtes" className="hover:text-white transition-colors">Robes Courtes</Link></li>
-                            <li><Link href="/categories/accessoires" className="hover:text-white transition-colors">Accessoires</Link></li>
-                            <li><Link href="/categories/hommes" className="hover:text-white transition-colors">Pour Lui</Link></li>
-                            <li><Link href="/occasions/mariage" className="hover:text-white transition-colors">Mariages</Link></li>
+                            <li><Link href="/collection?category=ROBES_LONGUES" className="hover:text-white transition-colors">Robes Longues</Link></li>
+                            <li><Link href="/collection?category=ROBES_COURTES_MIDI" className="hover:text-white transition-colors">Robes Courtes</Link></li>
+                            <li><Link href="/collection?category=ACCESSOIRES" className="hover:text-white transition-colors">Accessoires</Link></li>
+                            <li><Link href="/collection?category=BOUBOUS" className="hover:text-white transition-colors">Boubous</Link></li>
+                            <li><Link href="/collection?occasion=MARIAGE" className="hover:text-white transition-colors">Mariages</Link></li>
                         </ul>
                     </div>
 
