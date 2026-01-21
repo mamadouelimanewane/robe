@@ -1,0 +1,16 @@
+.env
+.env.example
+.gitignore
+.next
+app
+components
+lib
+next-env.d.ts
+next.config.mjs
+node_modules
+package-lock.json
+package.json
+prisma
+README.md
+tailwind.config.ts
+tsconfig.json
