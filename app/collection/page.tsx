@@ -18,10 +18,10 @@ function CollectionContent() {
 
     const categories = [
         { label: 'Toute la collection', value: 'TOUT' },
-        { label: 'Robes Longues', value: 'ROBES_LONGUES' },
-        { label: 'Robes Courtes', value: 'ROBES_COURTES_MIDI' },
-        { label: 'Ensembles & Boubous', value: 'SMOKINGS_ENSEMBLES' },
-        { label: 'Pour Lui', value: 'COSTUMES_HOMMES' },
+        { label: 'Boubous & Traditions', value: 'BOUBOUS' },
+        { label: 'Robes de Soirée', value: 'ROBES_SOIREE' },
+        { label: 'Ensembles', value: 'ENSEMBLES' },
+        { label: 'Accessoires', value: 'ACCESSOIRES' },
     ];
 
     useEffect(() => {

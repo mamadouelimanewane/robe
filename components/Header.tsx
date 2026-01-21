@@ -24,13 +24,13 @@ export default function Header() {
                     {/* Desktop Navigation */}
                     <nav className="hidden lg:flex items-center space-x-8">
                         <Link href="/collection" className="text-sm font-medium hover:text-primary-500 transition-colors">
-                            Collection Luxe
+                            Nos Robes
                         </Link>
-                        <Link href="/collection?premium=true" className="text-sm font-medium hover:text-primary-500 transition-colors">
-                            Location Premium
+                        <Link href="/collection?category=BOUBOUS" className="text-sm font-medium hover:text-primary-500 transition-colors">
+                            Boubous & Traditions
                         </Link>
-                        <Link href="/collection?genre=homme" className="text-sm font-medium hover:text-primary-500 transition-colors">
-                            Pour Lui
+                        <Link href="/nouveautes" className="text-sm font-medium hover:text-primary-500 transition-colors">
+                            Nouveautés
                         </Link>
                         <Link href="/comment-ca-marche" className="text-sm font-medium hover:text-primary-500 transition-colors">
                             Comment ça marche ?
@@ -72,23 +72,20 @@ export default function Header() {
                 {isMenuOpen && (
                     <div className="lg:hidden py-4 border-t border-white/10">
                         <nav className="flex flex-col space-y-4">
-                            <Link href="/location-luxe" className="text-sm font-medium hover:text-primary-500 transition-colors">
-                                Location Luxe
+                            <Link href="/collection" className="text-sm font-medium hover:text-primary-500 transition-colors">
+                                Toutes les Robes
                             </Link>
-                            <Link href="/location-premium" className="text-sm font-medium hover:text-primary-500 transition-colors">
-                                Location Premium
-                            </Link>
-                            <Link href="/pour-lui" className="text-sm font-medium hover:text-primary-500 transition-colors">
-                                Pour Lui
+                            <Link href="/collection?category=BOUBOUS" className="text-sm font-medium hover:text-primary-500 transition-colors">
+                                Boubous & Traditions
                             </Link>
                             <Link href="/occasions" className="text-sm font-medium hover:text-primary-500 transition-colors">
-                                Occasions
+                                Mariages & Cérémonies
                             </Link>
                             <Link href="/comment-ca-marche" className="text-sm font-medium hover:text-primary-500 transition-colors">
                                 Comment ça marche ?
                             </Link>
                             <Link href="/admin" className="text-sm font-medium text-gold-500 hover:text-gold-600 transition-colors border-t border-white/10 pt-4">
-                                Backoffice Admin
+                                Espace Admin
                             </Link>
                         </nav>
                     </div>
