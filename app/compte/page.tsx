@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 import { Package, Calendar, Clock, ChevronRight, User, Settings, LogOut } from 'lucide-react';
 import Link from 'next/link';
 

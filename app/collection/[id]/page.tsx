@@ -3,17 +3,21 @@
 import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Heart, ShoppingBag, ShieldCheck, Truck, RefreshCw, Loader2 } from 'lucide-react';
+import { Heart, ShoppingBag, ShieldCheck, Truck, RefreshCw, Loader2, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import { toast } from 'react-hot-toast';
+import DatePicker from 'react-datepicker';
+import { addDays, format } from 'date-fns';
+import { fr } from 'date-fns/locale';
 
 export default function ProductDetailPage({ params }: { params: { id: string } }) {
     const [product, setProduct] = useState<any>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [selectedDuration, setSelectedDuration] = useState(3);
+    const [startDate, setStartDate] = useState<Date | null>(new Date());
     const [activeImage, setActiveImage] = useState(0);
     const { addToCart } = useCart();
 
@@ -41,6 +45,8 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
         if (selectedDuration === 4) return product.rentalPrice4Days;
         return product.rentalPrice7Days;
     };
+
+    const endDate = startDate ? addDays(startDate, selectedDuration) : null;
 
     if (loading) {
         return (
@@ -135,6 +141,30 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                                 </div>
                             </div>
 
+                            {/* Choix Date */}
+                            <div className="space-y-3">
+                                <label className="block text-sm font-bold text-slate-700">Date de début</label>
+                                <div className="relative">
+                                    <DatePicker
+                                        selected={startDate}
+                                        onChange={(date) => setStartDate(date)}
+                                        selectsStart
+                                        startDate={startDate}
+                                        minDate={new Date()}
+                                        locale={fr}
+                                        dateFormat="dd/MM/yyyy"
+                                        className="w-full p-3 rounded-xl border-2 border-white bg-white focus:border-primary-600 outline-none transition-all pl-10"
+                                        placeholderText="Sélectionnez une date"
+                                    />
+                                    <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+                                </div>
+                                {startDate && endDate && (
+                                    <p className="text-xs text-gray-500 italic">
+                                        Fin de location le : {format(endDate, 'dd MMMM yyyy', { locale: fr })}
+                                    </p>
+                                )}
+                            </div>
+
                             <div className="flex items-center justify-between border-t border-slate-200 pt-6">
                                 <div>
                                     <span className="text-sm text-gray-500">Tarif location ({selectedDuration}j)</span>
@@ -148,6 +178,10 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
 
                             <button
                                 onClick={() => {
+                                    if (!startDate || !endDate) {
+                                        toast.error('Veuillez sélectionner une date');
+                                        return;
+                                    }
                                     addToCart({
                                         id: params.id,
                                         name: product.name,
@@ -155,8 +189,8 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                                         price: getPrice(),
                                         image: product.images[0],
                                         duration: selectedDuration,
-                                        startDate: new Date().toISOString(), // À remplacer par un vrai sélecteur de date
-                                        endDate: new Date().toISOString(), // À remplacer par un vrai sélecteur de date
+                                        startDate: startDate.toISOString(),
+                                        endDate: endDate.toISOString(),
                                         deposit: product.deposit
                                     });
                                     toast.success('Ajouté au panier !');
