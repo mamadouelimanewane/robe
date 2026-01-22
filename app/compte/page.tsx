@@ -83,7 +83,12 @@ export default function AccountPage() {
                                     <div key={booking.id} className="bg-white rounded-3xl p-4 md:p-6 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                                         <div className="flex flex-col md:flex-row items-center gap-6">
                                             <div className="relative w-24 h-32 rounded-2xl overflow-hidden flex-shrink-0">
-                                                <Image src={booking.image} alt="" fill className="object-cover" />
+                                                <Image
+                                                    src={booking.image}
+                                                    alt={booking.productName}
+                                                    fill
+                                                    className="object-cover"
+                                                />
                                             </div>
                                             <div className="flex-grow text-center md:text-left">
                                                 <div className="flex flex-col md:flex-row md:items-center gap-2 mb-2 justify-center md:justify-start">
