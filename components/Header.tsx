@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { ShoppingBag, Heart, User, Menu, X, Search } from 'lucide-react';
+import { ShoppingBag, Heart, User, Menu, X } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 
 export default function Header() {
@@ -10,119 +10,242 @@ export default function Header() {
     const { totalItems } = useCart();
 
     return (
-        <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Top Bar */}
-                <div className="flex items-center justify-between h-16 md:h-20">
+        <header style={{
+            position: 'sticky',
+            top: 0,
+            zIndex: 1000,
+            backgroundColor: 'white',
+            borderBottom: '1px solid #e5e7eb',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+        }}>
+            <div style={{
+                maxWidth: '1200px',
+                margin: '0 auto',
+                padding: '0 20px'
+            }}>
+                {/* Desktop Header */}
+                <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    height: '70px'
+                }}>
                     {/* Logo */}
-                    <Link href="/" className="flex items-center">
-                        <div className="text-xl md:text-2xl font-elegant font-bold text-slate-900">
+                    <Link href="/" style={{ textDecoration: 'none' }}>
+                        <div style={{
+                            fontSize: '24px',
+                            fontWeight: 'bold',
+                            color: '#1f2937',
+                            fontFamily: 'Georgia, serif'
+                        }}>
                             RobeSénégal
                         </div>
                     </Link>
 
-                    {/* Desktop Navigation */}
-                    <nav className="hidden lg:flex items-center space-x-8">
-                        <Link href="/collection" className="text-sm font-semibold text-gray-700 hover:text-amber-600 transition-colors">
+                    {/* Desktop Navigation - HORIZONTAL */}
+                    <nav style={{
+                        display: 'flex',
+                        gap: '30px',
+                        alignItems: 'center'
+                    }}
+                        className="desktop-nav">
+                        <Link
+                            href="/collection"
+                            style={{
+                                fontSize: '14px',
+                                fontWeight: '600',
+                                color: '#374151',
+                                textDecoration: 'none',
+                                whiteSpace: 'nowrap'
+                            }}
+                        >
                             Toutes les Robes
                         </Link>
-                        <Link href="/collection?category=BOUBOUS" className="text-sm font-semibold text-gray-700 hover:text-amber-600 transition-colors">
+                        <Link
+                            href="/collection?category=BOUBOUS"
+                            style={{
+                                fontSize: '14px',
+                                fontWeight: '600',
+                                color: '#374151',
+                                textDecoration: 'none',
+                                whiteSpace: 'nowrap'
+                            }}
+                        >
                             Bazin & Traditions
                         </Link>
-                        <Link href="/collection?category=ROBES_SOIREE" className="text-sm font-semibold text-gray-700 hover:text-amber-600 transition-colors">
+                        <Link
+                            href="/collection?category=ROBES_SOIREE"
+                            style={{
+                                fontSize: '14px',
+                                fontWeight: '600',
+                                color: '#374151',
+                                textDecoration: 'none',
+                                whiteSpace: 'nowrap'
+                            }}
+                        >
                             Soirée
                         </Link>
-                        <Link href="/collection?occasion=MARIAGE" className="text-sm font-semibold text-gray-700 hover:text-amber-600 transition-colors">
+                        <Link
+                            href="/collection?occasion=MARIAGE"
+                            style={{
+                                fontSize: '14px',
+                                fontWeight: '600',
+                                color: '#374151',
+                                textDecoration: 'none',
+                                whiteSpace: 'nowrap'
+                            }}
+                        >
                             Mariages
-                        </Link>
-                        <Link href="/comment-ca-marche" className="text-sm font-semibold text-gray-700 hover:text-amber-600 transition-colors">
-                            Comment ça marche ?
                         </Link>
                     </nav>
 
-                    {/* Right Actions */}
-                    <div className="flex items-center space-x-4 md:space-x-6">
-                        <button className="p-2 hover:text-amber-600 transition-colors hidden md:block">
-                            <Search className="w-5 h-5" />
-                        </button>
-                        <Link href="/favoris" className="p-2 hover:text-amber-600 transition-colors relative">
-                            <Heart className="w-5 h-5" />
-                            <span className="absolute -top-1 -right-1 bg-amber-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full font-bold">
+                    {/* Right Icons */}
+                    <div style={{
+                        display: 'flex',
+                        gap: '15px',
+                        alignItems: 'center'
+                    }}>
+                        <Link href="/favoris" style={{ position: 'relative' }}>
+                            <Heart style={{ width: '22px', height: '22px', color: '#374151' }} />
+                            <span style={{
+                                position: 'absolute',
+                                top: '-5px',
+                                right: '-5px',
+                                backgroundColor: '#f59e0b',
+                                color: 'white',
+                                fontSize: '10px',
+                                width: '16px',
+                                height: '16px',
+                                borderRadius: '50%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontWeight: 'bold'
+                            }}>
                                 0
                             </span>
                         </Link>
-                        <Link href="/panier" className="p-2 hover:text-amber-600 transition-colors relative">
-                            <ShoppingBag className="w-5 h-5" />
+                        <Link href="/panier" style={{ position: 'relative' }}>
+                            <ShoppingBag style={{ width: '22px', height: '22px', color: '#374151' }} />
                             {totalItems > 0 && (
-                                <span className="absolute -top-1 -right-1 bg-amber-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full font-bold">
+                                <span style={{
+                                    position: 'absolute',
+                                    top: '-5px',
+                                    right: '-5px',
+                                    backgroundColor: '#f59e0b',
+                                    color: 'white',
+                                    fontSize: '10px',
+                                    width: '16px',
+                                    height: '16px',
+                                    borderRadius: '50%',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontWeight: 'bold'
+                                }}>
                                     {totalItems}
                                 </span>
                             )}
                         </Link>
-                        <Link href="/login" className="p-2 hover:text-amber-600 transition-colors">
-                            <User className="w-5 h-5" />
+                        <Link href="/login">
+                            <User style={{ width: '22px', height: '22px', color: '#374151' }} />
                         </Link>
 
                         {/* Mobile Menu Button */}
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="lg:hidden p-2 hover:text-amber-600 transition-colors"
+                            style={{
+                                border: 'none',
+                                background: 'none',
+                                cursor: 'pointer',
+                                padding: '5px'
+                            }}
+                            className="mobile-menu-btn"
                         >
-                            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                            {isMenuOpen ?
+                                <X style={{ width: '24px', height: '24px' }} /> :
+                                <Menu style={{ width: '24px', height: '24px' }} />
+                            }
                         </button>
                     </div>
                 </div>
 
                 {/* Mobile Menu */}
                 {isMenuOpen && (
-                    <div className="lg:hidden py-4 border-t border-gray-100">
-                        <nav className="flex flex-col space-y-4">
+                    <div style={{
+                        padding: '20px 0',
+                        borderTop: '1px solid #e5e7eb'
+                    }}>
+                        <nav style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '15px'
+                        }}>
                             <Link
                                 href="/collection"
-                                className="text-sm font-semibold text-gray-700 hover:text-amber-600 transition-colors"
                                 onClick={() => setIsMenuOpen(false)}
+                                style={{
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#374151',
+                                    textDecoration: 'none'
+                                }}
                             >
                                 Toutes les Robes
                             </Link>
                             <Link
                                 href="/collection?category=BOUBOUS"
-                                className="text-sm font-semibold text-gray-700 hover:text-amber-600 transition-colors"
                                 onClick={() => setIsMenuOpen(false)}
+                                style={{
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#374151',
+                                    textDecoration: 'none'
+                                }}
                             >
                                 Bazin & Traditions
                             </Link>
                             <Link
                                 href="/collection?category=ROBES_SOIREE"
-                                className="text-sm font-semibold text-gray-700 hover:text-amber-600 transition-colors"
                                 onClick={() => setIsMenuOpen(false)}
+                                style={{
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#374151',
+                                    textDecoration: 'none'
+                                }}
                             >
                                 Robes de Soirée
                             </Link>
                             <Link
                                 href="/collection?occasion=MARIAGE"
-                                className="text-sm font-semibold text-gray-700 hover:text-amber-600 transition-colors"
                                 onClick={() => setIsMenuOpen(false)}
+                                style={{
+                                    fontSize: '14px',
+                                    fontWeight: '600',
+                                    color: '#374151',
+                                    textDecoration: 'none'
+                                }}
                             >
-                                Mariages & Cérémonies
-                            </Link>
-                            <Link
-                                href="/comment-ca-marche"
-                                className="text-sm font-semibold text-gray-700 hover:text-amber-600 transition-colors"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Comment ça marche ?
-                            </Link>
-                            <Link
-                                href="/admin"
-                                className="text-sm font-semibold text-amber-600 hover:text-amber-700 transition-colors border-t border-gray-100 pt-4"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Espace Admin
+                                Mariages
                             </Link>
                         </nav>
                     </div>
                 )}
             </div>
+
+            <style jsx>{`
+                @media (max-width: 768px) {
+                    .desktop-nav {
+                        display: none !important;
+                    }
+                }
+                @media (min-width: 769px) {
+                    .mobile-menu-btn {
+                        display: none !important;
+                    }
+                }
+            `}</style>
         </header>
     );
 }
