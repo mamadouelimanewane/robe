@@ -196,79 +196,79 @@ export default function HomePage() {
                     }}
                         className="product-grid">
 
-                        {/* Product 1 - Robe rouge élégante */}
+                        {/* Product 1 - Robe Mariée "Divine" */}
                         <div>
                             <Link href="/collection" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <div style={{ position: 'relative', width: '100%', paddingBottom: '140%', backgroundColor: '#f9fafb', borderRadius: '10px', overflow: 'hidden', marginBottom: '14px' }}>
                                     <img
-                                        src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=600&h=900&fit=crop"
-                                        alt="Robe de soirée rouge"
-                                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                                        src="/images/collection/mariage-sirene-manches.jpg"
+                                        alt="Robe Mariée Divine"
+                                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
                                     />
                                     <button style={{ position: 'absolute', top: '12px', right: '12px', width: '38px', height: '38px', backgroundColor: 'white', border: 'none', borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
                                         <Heart style={{ width: '18px', height: '18px', color: '#374151' }} />
                                     </button>
-                                    <span style={{ position: 'absolute', bottom: '12px', left: '12px', padding: '5px 13px', backgroundColor: 'rgba(255,255,255,0.95)', fontSize: '11px', fontWeight: 'bold', borderRadius: '20px', color: '#111827' }}>Soirée</span>
+                                    <span style={{ position: 'absolute', bottom: '12px', left: '12px', padding: '5px 13px', backgroundColor: 'rgba(255,255,255,0.95)', fontSize: '11px', fontWeight: 'bold', borderRadius: '20px', color: '#111827' }}>Mariage</span>
                                 </div>
-                                <h3 style={{ fontWeight: '500', fontSize: '14px', marginBottom: '6px', color: '#111827', lineHeight: '1.4' }}>Robe Sirène "Almadies"</h3>
-                                <p style={{ fontWeight: 'bold', color: '#f59e0b', fontSize: '17px' }}>70.000 FCFA <span style={{ fontSize: '11px', color: '#9ca3af', fontWeight: 'normal' }}>/ 3j</span></p>
+                                <h3 style={{ fontWeight: '500', fontSize: '14px', marginBottom: '6px', color: '#111827', lineHeight: '1.4' }}>Robe Mariée "Divine"</h3>
+                                <p style={{ fontWeight: 'bold', color: '#f59e0b', fontSize: '17px' }}>130.000 FCFA <span style={{ fontSize: '11px', color: '#9ca3af', fontWeight: 'normal' }}>/ 3j</span></p>
                             </Link>
                         </div>
 
-                        {/* Product 2 - Robe dorée africaine */}
+                        {/* Product 2 - Ensemble Pagne "Soleil" */}
                         <div>
                             <Link href="/collection" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <div style={{ position: 'relative', width: '100%', paddingBottom: '140%', backgroundColor: '#f9fafb', borderRadius: '10px', overflow: 'hidden', marginBottom: '14px' }}>
                                     <img
-                                        src="https://images.unsplash.com/photo-1583391265902-29b211eac155?q=80&w=600&h=900&fit=crop"
-                                        alt="Robe africaine dorée"
-                                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                                        src="/images/collection/ensemble-pagne-jaune.jpg"
+                                        alt="Ensemble Pagne Soleil"
+                                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
                                     />
                                     <button style={{ position: 'absolute', top: '12px', right: '12px', width: '38px', height: '38px', backgroundColor: 'white', border: 'none', borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
                                         <Heart style={{ width: '18px', height: '18px' }} />
                                     </button>
-                                    <span style={{ position: 'absolute', bottom: '12px', left: '12px', padding: '5px 13px', backgroundColor: 'rgba(255,255,255,0.95)', fontSize: '11px', fontWeight: 'bold', borderRadius: '20px' }}>Bazin</span>
+                                    <span style={{ position: 'absolute', bottom: '12px', left: '12px', padding: '5px 13px', backgroundColor: 'rgba(255,255,255,0.95)', fontSize: '11px', fontWeight: 'bold', borderRadius: '20px' }}>Tradition</span>
                                 </div>
-                                <h3 style={{ fontWeight: '500', fontSize: '14px', marginBottom: '6px', color: '#111827', lineHeight: '1.4' }}>Ensemble Bazin "Teranga"</h3>
-                                <p style={{ fontWeight: 'bold', color: '#f59e0b', fontSize: '17px' }}>50.000 FCFA <span style={{ fontSize: '11px', color: '#9ca3af', fontWeight: 'normal' }}>/ 3j</span></p>
+                                <h3 style={{ fontWeight: '500', fontSize: '14px', marginBottom: '6px', color: '#111827', lineHeight: '1.4' }}>Ensemble Pagne "Soleil"</h3>
+                                <p style={{ fontWeight: 'bold', color: '#f59e0b', fontSize: '17px' }}>60.000 FCFA <span style={{ fontSize: '11px', color: '#9ca3af', fontWeight: 'normal' }}>/ 3j</span></p>
                             </Link>
                         </div>
 
-                        {/* Product 3 - Robe verte africaine */}
+                        {/* Product 3 - Robe Gala "Royale Blue" */}
                         <div>
                             <Link href="/collection" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <div style={{ position: 'relative', width: '100%', paddingBottom: '140%', backgroundColor: '#f9fafb', borderRadius: '10px', overflow: 'hidden', marginBottom: '14px' }}>
                                     <img
-                                        src="https://images.unsplash.com/photo-1612809842537-5234a9325a71?q=80&w=600&h=900&fit=crop"
-                                        alt="Robe africaine verte"
-                                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                                        src="/images/collection/soiree-bleu-roi.jpg"
+                                        alt="Robe Gala Royale Blue"
+                                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
+                                    />
+                                    <button style={{ position: 'absolute', top: '12px', right: '12px', width: '38px', height: '38px', backgroundColor: 'white', border: 'none', borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
+                                        <Heart style={{ width: '18px', height: '18px' }} />
+                                    </button>
+                                    <span style={{ position: 'absolute', bottom: '12px', left: '12px', padding: '5px 13px', backgroundColor: 'rgba(255,255,255,0.95)', fontSize: '11px', fontWeight: 'bold', borderRadius: '20px' }}>Soirée</span>
+                                </div>
+                                <h3 style={{ fontWeight: '500', fontSize: '14px', marginBottom: '6px', color: '#111827', lineHeight: '1.4' }}>Robe Gala "Royale Blue"</h3>
+                                <p style={{ fontWeight: 'bold', color: '#f59e0b', fontSize: '17px' }}>80.000 FCFA <span style={{ fontSize: '11px', color: '#9ca3af', fontWeight: 'normal' }}>/ 3j</span></p>
+                            </Link>
+                        </div>
+
+                        {/* Product 4 - Robe Mariée "Princesse Yaye" */}
+                        <div>
+                            <Link href="/collection" style={{ textDecoration: 'none', color: 'inherit' }}>
+                                <div style={{ position: 'relative', width: '100%', paddingBottom: '140%', backgroundColor: '#f9fafb', borderRadius: '10px', overflow: 'hidden', marginBottom: '14px' }}>
+                                    <img
+                                        src="/images/collection/mariage-princesse.jpg"
+                                        alt="Robe Mariée Princesse Yaye"
+                                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
                                     />
                                     <button style={{ position: 'absolute', top: '12px', right: '12px', width: '38px', height: '38px', backgroundColor: 'white', border: 'none', borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
                                         <Heart style={{ width: '18px', height: '18px' }} />
                                     </button>
                                     <span style={{ position: 'absolute', bottom: '12px', left: '12px', padding: '5px 13px', backgroundColor: 'rgba(255,255,255,0.95)', fontSize: '11px', fontWeight: 'bold', borderRadius: '20px' }}>Mariage</span>
                                 </div>
-                                <h3 style={{ fontWeight: '500', fontSize: '14px', marginBottom: '6px', color: '#111827', lineHeight: '1.4' }}>Tenue Mariage "Gorée"</h3>
-                                <p style={{ fontWeight: 'bold', color: '#f59e0b', fontSize: '17px' }}>65.000 FCFA <span style={{ fontSize: '11px', color: '#9ca3af', fontWeight: 'normal' }}>/ 3j</span></p>
-                            </Link>
-                        </div>
-
-                        {/* Product 4 - Robe bleue élégante */}
-                        <div>
-                            <Link href="/collection" style={{ textDecoration: 'none', color: 'inherit' }}>
-                                <div style={{ position: 'relative', width: '100%', paddingBottom: '140%', backgroundColor: '#f9fafb', borderRadius: '10px', overflow: 'hidden', marginBottom: '14px' }}>
-                                    <img
-                                        src="https://images.unsplash.com/photo-1502980559884-8df7f3852a80?q=80&w=600&h=900&fit=crop"
-                                        alt="Robe bleue soirée"
-                                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-                                    />
-                                    <button style={{ position: 'absolute', top: '12px', right: '12px', width: '38px', height: '38px', backgroundColor: 'white', border: 'none', borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
-                                        <Heart style={{ width: '18px', height: '18px' }} />
-                                    </button>
-                                    <span style={{ position: 'absolute', bottom: '12px', left: '12px', padding: '5px 13px', backgroundColor: 'rgba(255,255,255,0.95)', fontSize: '11px', fontWeight: 'bold', borderRadius: '20px' }}>Gala</span>
-                                </div>
-                                <h3 style={{ fontWeight: '500', fontSize: '14px', marginBottom: '6px', color: '#111827', lineHeight: '1.4' }}>Robe Gala "Dakar"</h3>
-                                <p style={{ fontWeight: 'bold', color: '#f59e0b', fontSize: '17px' }}>58.000 FCFA <span style={{ fontSize: '11px', color: '#9ca3af', fontWeight: 'normal' }}>/ 3j</span></p>
+                                <h3 style={{ fontWeight: '500', fontSize: '14px', marginBottom: '6px', color: '#111827', lineHeight: '1.4' }}>Robe Mariée "Princesse Yaye"</h3>
+                                <p style={{ fontWeight: 'bold', color: '#f59e0b', fontSize: '17px' }}>150.000 FCFA <span style={{ fontSize: '11px', color: '#9ca3af', fontWeight: 'normal' }}>/ 3j</span></p>
                             </Link>
                         </div>
 
