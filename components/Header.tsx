@@ -215,7 +215,7 @@ export default function Header() {
                                     textDecoration: 'none'
                                 }}
                             >
-                                Robes de Soirée
+                                Soirée
                             </Link>
                             <Link
                                 href="/collection?occasion=MARIAGE"
