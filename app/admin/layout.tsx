@@ -57,16 +57,16 @@ export default function AdminLayout({
                     </div>
 
                     {/* Navigation */}
-                    <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
+                    <nav className="flex-1 p-4 flex flex-col space-y-2 overflow-y-auto">
                         {menuItems.map((item) => {
                             const isActive = pathname === item.href;
                             return (
                                 <Link
                                     key={item.name}
                                     href={item.href}
-                                    className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${isActive
-                                            ? 'bg-primary-600 text-white'
-                                            : 'text-gray-300 hover:bg-slate-700'
+                                    className={`flex items-center space-x-3 px-4 py-3 rounded-lg w-full transition-colors ${isActive
+                                        ? 'bg-primary-600 text-white'
+                                        : 'text-gray-300 hover:bg-slate-700'
                                         }`}
                                 >
                                     <item.icon className="w-5 h-5" />
