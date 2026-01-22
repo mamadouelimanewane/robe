@@ -6,42 +6,42 @@ import Footer from '@/components/Footer';
 import { Heart } from 'lucide-react';
 import Link from 'next/link';
 
-// DATA MOCKÉE - Images PREMIUM 100% FEMMES AFRICAINES
-// Utilisation d'URL Unsplash directes et stables
+// DATA MOCKÉE - IMAGES PEXELS (Plus stables pour le hotlinking)
+// Images soigneusment sélectionnées : Femmes africaines, tenues traditionnelles ou de gala.
 const PRODUCTS_DATA = [
     {
         id: '1',
-        name: 'Robe Sirène "Almas"',
+        name: 'Robe Sirène "Mame Diarra"',
         price: 70000,
         category: 'ROBES_SOIREE',
-        image: 'https://images.unsplash.com/photo-1577909383827-c10ba278051c?q=80&w=800&auto=format&fit=crop', // Femme africaine robe rouge
+        image: 'https://images.pexels.com/photos/15509130/pexels-photo-15509130.jpeg?auto=compress&cs=tinysrgb&w=800', // Robe noire élégante
         brand: 'Sénégal Chic',
         available: true
     },
     {
         id: '2',
-        name: 'Grand Boubou "Royale"',
+        name: 'Grand Boubou "Signarre"',
         price: 55000,
         category: 'BOUBOUS',
-        image: 'https://images.unsplash.com/photo-1534030347209-7147fd9e7b2a?q=80&w=800&auto=format&fit=crop', // Femme africaine tenue traditionnelle
+        image: 'https://images.pexels.com/photos/5303015/pexels-photo-5303015.jpeg?auto=compress&cs=tinysrgb&w=800', // Tenue jaune traditionnelle
         brand: 'Touba Couture',
         available: true
     },
     {
         id: '3',
-        name: 'Robe Mariée "Yaye"',
+        name: 'Robe Mariée "Linguère"',
         price: 85000,
         category: 'MARIAGE',
-        image: 'https://images.unsplash.com/photo-1547348123-28f000300c3b?q=80&w=800&auto=format&fit=crop', // Mariée africaine
+        image: 'https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=800', // Mariée
         brand: 'Dakar Wedding',
         available: true
     },
     {
         id: '4',
-        name: 'Ensemble Soirée "Gala"',
+        name: 'Ensemble Soirée "Terrou-Bi"',
         price: 60000,
         category: 'ROBES_SOIREE',
-        image: 'https://images.unsplash.com/photo-1616831036322-a72eb3769c36?q=80&w=800&auto=format&fit=crop', // Femme modèle africaine
+        image: 'https://images.pexels.com/photos/1721558/pexels-photo-1721558.jpeg?auto=compress&cs=tinysrgb&w=800', // Robe Rouge
         brand: 'Nuit Dakaroise',
         available: true
     },
@@ -50,34 +50,34 @@ const PRODUCTS_DATA = [
         name: 'Boubou Bazin "Saloum"',
         price: 45000,
         category: 'BOUBOUS',
-        image: 'https://images.unsplash.com/photo-1531123414780-f74242c2b052?q=80&w=800&auto=format&fit=crop', // Portrait femme africaine tenue colorée
+        image: 'https://images.pexels.com/photos/1181292/pexels-photo-1181292.jpeg?auto=compress&cs=tinysrgb&w=800', // Headwrap coloré
         brand: 'Ndar Style',
         available: true
     },
     {
         id: '6',
-        name: 'Robe Cocktail "Ebène"',
-        price: 40000,
+        name: 'Tenue de Gala "Radisson"',
+        price: 65000,
         category: 'ROBES_SOIREE',
-        image: 'https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?q=80&w=800&auto=format&fit=crop', // Femme noire robe jaune
-        brand: 'Sunny Dakar',
+        image: 'https://images.pexels.com/photos/3755918/pexels-photo-3755918.jpeg?auto=compress&cs=tinysrgb&w=800', // Robe bleue
+        brand: 'Prestige Dakar',
         available: true
     },
     {
         id: '7',
-        name: 'Ensemble Wax "Lébou"',
-        price: 35000,
-        category: 'ENSEMBLES',
-        image: 'https://images.unsplash.com/photo-1502980559884-8df7f3852a80?q=80&w=800&auto=format&fit=crop', // Femme africaine robe bleue
+        name: 'Ensemble Tradition "Walo"',
+        price: 50000,
+        category: 'BOUBOUS',
+        image: 'https://images.pexels.com/photos/2085739/pexels-photo-2085739.jpeg?auto=compress&cs=tinysrgb&w=800', // Femme africaine style fashion
         brand: 'Wax Modern',
         available: true
     },
     {
         id: '8',
-        name: 'Tenue Cérémonie "Or"',
+        name: 'Robe Cérémonie "Or"',
         price: 75000,
         category: 'MARIAGE',
-        image: 'https://images.unsplash.com/photo-1583391265902-29b211eac155?q=80&w=800&auto=format&fit=crop', // Détail tissu/femme noire
+        image: 'https://images.pexels.com/photos/2512142/pexels-photo-2512142.jpeg?auto=compress&cs=tinysrgb&w=800', // Femme voilée elégante
         brand: 'Prestige Dakar',
         available: true
     },
@@ -112,11 +112,11 @@ export default function CollectionPage() {
                         Notre Collection Exclusive
                     </h1>
                     <p style={{ color: '#666', fontSize: '16px' }}>
-                        Découvrez l'élégance de la femme sénégalaise
+                        L'élégance sénégalaise pour vos plus beaux événements
                     </p>
                 </div>
 
-                {/* FILTRES - Mieux stylisés */}
+                {/* FILTRES */}
                 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '50px', flexWrap: 'wrap', gap: '15px' }}>
                     {categories.map((cat) => (
                         <button
@@ -146,13 +146,13 @@ export default function CollectionPage() {
                     display: 'flex',
                     flexWrap: 'wrap',
                     gap: '30px',
-                    justifyContent: 'center' /* Centré pour équilibre */
+                    justifyContent: 'center'
                 }}>
                     {filteredProducts.map((product) => (
                         <div
                             key={product.id}
                             style={{
-                                width: '270px', /* Fixe pour grille régulière */
+                                width: '270px',
                                 flex: '0 0 auto',
                                 display: 'flex',
                                 flexDirection: 'column',
@@ -165,7 +165,7 @@ export default function CollectionPage() {
                                 <div style={{
                                     position: 'relative',
                                     width: '100%',
-                                    height: '380px', // Plus haut pour élégance
+                                    height: '380px',
                                     backgroundColor: '#f5f5f5',
                                     borderRadius: '4px',
                                     overflow: 'hidden',
@@ -203,19 +203,19 @@ export default function CollectionPage() {
                                         <Heart size={16} color="#333" />
                                     </div>
 
-                                    {/* Badge Catégorie si besoin */}
+                                    {/* Availability Badge for visual confirmation */}
                                     <div style={{
                                         position: 'absolute',
                                         bottom: '10px',
                                         left: '10px',
                                         backgroundColor: 'rgba(255,255,255,0.9)',
-                                        padding: '4px 10px',
+                                        padding: '4px 8px',
+                                        borderRadius: '4px',
                                         fontSize: '10px',
                                         fontWeight: 'bold',
-                                        textTransform: 'uppercase',
-                                        borderRadius: '20px'
+                                        textTransform: 'uppercase'
                                     }}>
-                                        {product.category === 'ROBES_SOIREE' ? 'Soirée' : product.category === 'BOUBOUS' ? 'Boubou' : product.category}
+                                        {product.category}
                                     </div>
                                 </div>
 
