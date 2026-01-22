@@ -6,78 +6,78 @@ import Footer from '@/components/Footer';
 import { Heart } from 'lucide-react';
 import Link from 'next/link';
 
-// DATA MOCKÉE - Images fiables (Unsplash source directe)
-// J'utilise des IDs d'images spécifiques et stables
+// DATA MOCKÉE - Images PREMIUM 100% FEMMES AFRICAINES
+// Utilisation d'URL Unsplash directes et stables
 const PRODUCTS_DATA = [
     {
         id: '1',
-        name: 'Robe Sirène "Almadies"',
+        name: 'Robe Sirène "Almas"',
         price: 70000,
         category: 'ROBES_SOIREE',
-        image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1577909383827-c10ba278051c?q=80&w=800&auto=format&fit=crop', // Femme africaine robe rouge
         brand: 'Sénégal Chic',
         available: true
     },
     {
         id: '2',
-        name: 'Ensemble Bazin "Teranga"',
-        price: 50000,
+        name: 'Grand Boubou "Royale"',
+        price: 55000,
         category: 'BOUBOUS',
-        image: 'https://images.unsplash.com/photo-1607513549650-07bf115cb982?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1534030347209-7147fd9e7b2a?q=80&w=800&auto=format&fit=crop', // Femme africaine tenue traditionnelle
         brand: 'Touba Couture',
         available: true
     },
     {
         id: '3',
-        name: 'Tenue Mariage "Gorée"',
-        price: 65000,
+        name: 'Robe Mariée "Yaye"',
+        price: 85000,
         category: 'MARIAGE',
-        image: 'https://images.unsplash.com/photo-1546522306-69a48f6828af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1547348123-28f000300c3b?q=80&w=800&auto=format&fit=crop', // Mariée africaine
         brand: 'Dakar Wedding',
         available: true
     },
     {
         id: '4',
-        name: 'Robe Gala "Dakar"',
-        price: 58000,
+        name: 'Ensemble Soirée "Gala"',
+        price: 60000,
         category: 'ROBES_SOIREE',
-        image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1616831036322-a72eb3769c36?q=80&w=800&auto=format&fit=crop', // Femme modèle africaine
         brand: 'Nuit Dakaroise',
         available: true
     },
     {
         id: '5',
-        name: 'Boubou Soie "Saint-Louis"',
+        name: 'Boubou Bazin "Saloum"',
         price: 45000,
         category: 'BOUBOUS',
-        image: 'https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1531123414780-f74242c2b052?q=80&w=800&auto=format&fit=crop', // Portrait femme africaine tenue colorée
         brand: 'Ndar Style',
         available: true
     },
     {
         id: '6',
-        name: 'Robe Cocktail "Ngor"',
-        price: 35000,
+        name: 'Robe Cocktail "Ebène"',
+        price: 40000,
         category: 'ROBES_SOIREE',
-        image: 'https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?q=80&w=800&auto=format&fit=crop', // Femme noire robe jaune
         brand: 'Sunny Dakar',
         available: true
     },
     {
         id: '7',
-        name: 'Ensemble Wax "Plateau"',
-        price: 40000,
+        name: 'Ensemble Wax "Lébou"',
+        price: 35000,
         category: 'ENSEMBLES',
-        image: 'https://images.unsplash.com/photo-1531123414780-f74242c2b052?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1502980559884-8df7f3852a80?q=80&w=800&auto=format&fit=crop', // Femme africaine robe bleue
         brand: 'Wax Modern',
         available: true
     },
     {
         id: '8',
-        name: 'Robe Cérémonie "Mermoz"',
-        price: 60000,
+        name: 'Tenue Cérémonie "Or"',
+        price: 75000,
         category: 'MARIAGE',
-        image: 'https://images.unsplash.com/photo-1620215869408-54b0e5170d7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1583391265902-29b211eac155?q=80&w=800&auto=format&fit=crop', // Détail tissu/femme noire
         brand: 'Prestige Dakar',
         available: true
     },
@@ -95,8 +95,8 @@ export default function CollectionPage() {
 
     const categories = [
         { label: 'Tout', value: 'TOUT' },
-        { label: 'Boubous', value: 'BOUBOUS' },
-        { label: 'Soirée', value: 'ROBES_SOIREE' },
+        { label: 'Boubous & Bazin', value: 'BOUBOUS' },
+        { label: 'Robes de Soirée', value: 'ROBES_SOIREE' },
         { label: 'Mariages', value: 'MARIAGE' },
     ];
 
@@ -108,30 +108,32 @@ export default function CollectionPage() {
 
                 {/* TITRE */}
                 <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-                    <h1 style={{ fontSize: '32px', fontWeight: 'bold', marginBottom: '10px', color: '#111' }}>
-                        Notre Collection
+                    <h1 style={{ fontSize: '32px', fontWeight: 'bold', marginBottom: '10px', color: '#111', fontFamily: 'Georgia, serif' }}>
+                        Notre Collection Exclusive
                     </h1>
                     <p style={{ color: '#666', fontSize: '16px' }}>
-                        Élégance et Tradition Sénégalaise
+                        Découvrez l'élégance de la femme sénégalaise
                     </p>
                 </div>
 
-                {/* FILTRES - CENTRÉS */}
-                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px', flexWrap: 'wrap', gap: '10px' }}>
+                {/* FILTRES - Mieux stylisés */}
+                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '50px', flexWrap: 'wrap', gap: '15px' }}>
                     {categories.map((cat) => (
                         <button
                             key={cat.value}
                             onClick={() => setActiveCategory(cat.value)}
                             style={{
-                                padding: '10px 25px',
-                                borderRadius: '25px',
-                                border: activeCategory === cat.value ? '2px solid #000' : '1px solid #ddd',
-                                backgroundColor: activeCategory === cat.value ? '#000' : 'transparent',
-                                color: activeCategory === cat.value ? '#fff' : '#333',
+                                padding: '12px 30px',
+                                borderRadius: '30px',
+                                border: activeCategory === cat.value ? '2px solid #000' : '1px solid #e5e5e5',
+                                backgroundColor: activeCategory === cat.value ? '#000' : 'white',
+                                color: activeCategory === cat.value ? '#fff' : '#444',
                                 fontSize: '14px',
                                 fontWeight: '600',
                                 cursor: 'pointer',
-                                transition: 'all 0.2s'
+                                transition: 'all 0.3s ease',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.05em'
                             }}
                         >
                             {cat.label}
@@ -139,19 +141,19 @@ export default function CollectionPage() {
                     ))}
                 </div>
 
-                {/* GRILLE PRODUITS - FLEXBOX WRAP ROBUSTE */}
+                {/* GRILLE PRODUITS */}
                 <div style={{
                     display: 'flex',
                     flexWrap: 'wrap',
                     gap: '30px',
-                    justifyContent: 'flex-start' /* Aligné à gauche pour la dernière ligne */
+                    justifyContent: 'center' /* Centré pour équilibre */
                 }}>
                     {filteredProducts.map((product) => (
                         <div
                             key={product.id}
                             style={{
-                                width: '260px', /* Largeur fixe pour garantir l'alignement */
-                                flex: '0 0 auto', /* Ne pas grandir ni rétrécir */
+                                width: '270px', /* Fixe pour grille régulière */
+                                flex: '0 0 auto',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 marginBottom: '20px'
@@ -163,11 +165,11 @@ export default function CollectionPage() {
                                 <div style={{
                                     position: 'relative',
                                     width: '100%',
-                                    height: '350px', /* Hauteur fixe */
-                                    backgroundColor: '#f0f0f0',
-                                    borderRadius: '8px',
+                                    height: '380px', // Plus haut pour élégance
+                                    backgroundColor: '#f5f5f5',
+                                    borderRadius: '4px',
                                     overflow: 'hidden',
-                                    marginBottom: '12px'
+                                    marginBottom: '15px'
                                 }}>
                                     <img
                                         src={product.image}
@@ -176,11 +178,12 @@ export default function CollectionPage() {
                                             width: '100%',
                                             height: '100%',
                                             objectFit: 'cover',
-                                            display: 'block'
+                                            display: 'block',
+                                            transition: 'transform 0.5s ease'
                                         }}
+                                        className="hover:scale-105"
                                         onError={(e) => {
-                                            // Fallback image si erreur
-                                            (e.target as HTMLImageElement).src = 'https://placehold.co/600x900/png?text=Image+Non+Dispo';
+                                            (e.target as HTMLImageElement).src = 'https://placehold.co/600x900/png?text=Photo+Indisponible';
                                         }}
                                     />
 
@@ -199,28 +202,45 @@ export default function CollectionPage() {
                                     }}>
                                         <Heart size={16} color="#333" />
                                     </div>
+
+                                    {/* Badge Catégorie si besoin */}
+                                    <div style={{
+                                        position: 'absolute',
+                                        bottom: '10px',
+                                        left: '10px',
+                                        backgroundColor: 'rgba(255,255,255,0.9)',
+                                        padding: '4px 10px',
+                                        fontSize: '10px',
+                                        fontWeight: 'bold',
+                                        textTransform: 'uppercase',
+                                        borderRadius: '20px'
+                                    }}>
+                                        {product.category === 'ROBES_SOIREE' ? 'Soirée' : product.category === 'BOUBOUS' ? 'Boubou' : product.category}
+                                    </div>
                                 </div>
 
                                 {/* Info */}
-                                <div>
-                                    <h3 style={{ fontSize: '15px', fontWeight: '600', color: '#111', marginBottom: '5px', lineHeight: '1.3', height: '40px', overflow: 'hidden' }}>
-                                        {product.name}
-                                    </h3>
-                                    <div style={{ fontSize: '13px', color: '#666', marginBottom: '8px' }}>
+                                <div style={{ textAlign: 'left' }}>
+                                    <div style={{ fontSize: '11px', color: '#888', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>
                                         {product.brand}
                                     </div>
-                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                        <span style={{ fontSize: '16px', fontWeight: 'bold', color: '#d97706' }}>
+                                    <h3 style={{ fontSize: '15px', fontWeight: '500', color: '#111', marginBottom: '8px', lineHeight: '1.4', height: '22px', overflow: 'hidden' }}>
+                                        {product.name}
+                                    </h3>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '5px' }}>
+                                        <span style={{ fontSize: '15px', fontWeight: 'bold', color: '#000' }}>
                                             {product.price.toLocaleString('fr-FR')} FCFA
                                         </span>
                                         <span style={{
-                                            fontSize: '12px',
+                                            fontSize: '11px',
                                             fontWeight: '600',
                                             textTransform: 'uppercase',
-                                            borderBottom: '1px solid #111',
-                                            paddingBottom: '2px'
+                                            backgroundColor: '#f8f8f8',
+                                            padding: '4px 8px',
+                                            borderRadius: '4px',
+                                            color: '#666'
                                         }}>
-                                            Réserver
+                                            3 Jours
                                         </span>
                                     </div>
                                 </div>
@@ -228,9 +248,6 @@ export default function CollectionPage() {
                             </Link>
                         </div>
                     ))}
-
-                    {/* Hack pour l'alignement à gauche des derniers éléments si on utilise justify-content: space-between (pas utilisé ici mais bon à savoir) */}
-                    {/* Mais avec justify-content: flex-start et gap, c'est bon */}
                 </div>
 
                 {filteredProducts.length === 0 && (
@@ -241,19 +258,6 @@ export default function CollectionPage() {
             </div>
 
             <Footer />
-
-            {/* CSS Media Query pour mobile via balise style */}
-            <style jsx>{`
-                @media (max-width: 600px) {
-                    div[style*="display: flex"][style*="flex-wrap: wrap"] {
-                        justify-content: center !important;
-                    }
-                    div[style*="width: 260px"] {
-                        width: 100% !important;
-                        max-width: 350px !important;
-                    }
-                }
-            `}</style>
         </div>
     );
 }
