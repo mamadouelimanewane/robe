@@ -6,15 +6,16 @@ import Footer from '@/components/Footer';
 import { Heart } from 'lucide-react';
 import Link from 'next/link';
 
-// DATA MOCKÉE - SÉLECTION STRICTE 100% FEMMES AFRICAINES
+// DATA MOCKÉE - PHOTOS PRODUITS UNIQUEMENT (Pas de mannequins)
+// Focus sur les tissus, les coupes et les motifs africains
 const PRODUCTS_DATA = [
     {
         id: '1',
         name: 'Robe Sirène "Mame Diarra"',
         price: 70000,
         category: 'ROBES_SOIREE',
-        // Femme noire, robe jaune moutarde, turban
-        image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        // Robe Rouge/Or sur cintre ou détail tissu
+        image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         brand: 'Sénégal Chic',
         available: true
     },
@@ -23,8 +24,8 @@ const PRODUCTS_DATA = [
         name: 'Grand Boubou "Signarre"',
         price: 55000,
         category: 'BOUBOUS',
-        // Femme noire, maquillage traditionnel, bijoux
-        image: 'https://images.unsplash.com/photo-1531123414780-f74242c2b052?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        // Tissus Bazin pliés colorés
+        image: 'https://images.unsplash.com/photo-1607062483866-9b047a06368d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         brand: 'Touba Couture',
         available: true
     },
@@ -33,58 +34,58 @@ const PRODUCTS_DATA = [
         name: 'Robe Mariée "Linguère"',
         price: 85000,
         category: 'MARIAGE',
-        // Femme noire, robe blanche/or, élégante
-        image: 'https://images.unsplash.com/photo-1546522306-69a48f6828af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        // Détail robe blanche dentelle
+        image: 'https://images.unsplash.com/photo-1594552072238-b8a33785b261?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         brand: 'Dakar Wedding',
         available: true
     },
     {
         id: '4',
-        name: 'Ensemble Soirée "Terrou-Bi"',
+        name: 'Ensemble Bazin "Terrou-Bi"',
         price: 60000,
-        category: 'ROBES_SOIREE',
-        // Femme noire, look fashion, peau foncée
-        image: 'https://images.unsplash.com/photo-1523824921061-de82a024d62f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        category: 'BOUBOUS',
+        // Tissu violet/or riche
+        image: 'https://images.unsplash.com/photo-1574205562095-8d76df42371a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         brand: 'Nuit Dakaroise',
         available: true
     },
     {
         id: '5',
-        name: 'Boubou Bazin "Saloum"',
+        name: 'Boubou Brodé "Saloum"',
         price: 45000,
         category: 'BOUBOUS',
-        // Femme noire profil, élégance
-        image: 'https://images.unsplash.com/photo-1589156280159-518a5828e859?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        // Détail broderie or
+        image: 'https://images.unsplash.com/photo-1616685933618-42245f0962b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         brand: 'Ndar Style',
         available: true
     },
     {
         id: '6',
-        name: 'Tenue de Gala "Radisson"',
+        name: 'Robe de Soirée "Radisson"',
         price: 65000,
         category: 'ROBES_SOIREE',
-        // Femme noire, robe colorée
-        image: 'https://images.unsplash.com/photo-1512413914633-b5043f4041ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        // Robe bleue détail
+        image: 'https://images.unsplash.com/photo-1566810245084-5f5020125860?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         brand: 'Prestige Dakar',
         available: true
     },
     {
         id: '7',
-        name: 'Ensemble Tradition "Walo"',
+        name: 'Tissu Wax "Walo"',
         price: 50000,
         category: 'BOUBOUS',
-        // Femme noire, focus visage/bijoux
-        image: 'https://images.unsplash.com/photo-1607513549650-07bf115cb982?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        // Motif Wax vibrant
+        image: 'https://images.unsplash.com/photo-1588691656093-6c0757c2e88b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         brand: 'Wax Modern',
         available: true
     },
     {
         id: '8',
-        name: 'Robe Cérémonie "Or"',
+        name: 'Parure Mariage "Or"',
         price: 75000,
         category: 'MARIAGE',
-        // Femme noire, tenue soirée
-        image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        // Bijoux or et tissu
+        image: 'https://images.unsplash.com/photo-1602751584552-8ba43d5c38f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         brand: 'Prestige Dakar',
         available: true
     },
@@ -119,7 +120,7 @@ export default function CollectionPage() {
                         Notre Collection Exclusive
                     </h1>
                     <p style={{ color: '#666', fontSize: '16px' }}>
-                        L'élégance de la femme africaine
+                        Découvrez nos tissus d'exception et créations authentiques
                     </p>
                 </div>
 
