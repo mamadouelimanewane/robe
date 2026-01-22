@@ -6,15 +6,15 @@ import Footer from '@/components/Footer';
 import { Heart } from 'lucide-react';
 import Link from 'next/link';
 
-// DATA MOCKÉE - IMAGES LOCALES UPLOADÉES PAR L'UTILISATEUR
-// 100% Fidélité au contenu souhaité
+// DATA MOCKÉE - IMAGES LOCALES UPLOADÉES PAR L'UTILISATEUR (100% Custom)
+// Collection Complète : 10 Produits Uniques
 const PRODUCTS_DATA = [
+    // --- SERIE 1 (Robes Volumineuses & Tradition) ---
     {
         id: '1',
         name: 'Robe Mariée "Princesse Yaye"',
         price: 150000,
         category: 'MARIAGE',
-        // uploaded_image_0
         image: '/images/collection/mariage-princesse.jpg',
         brand: 'Dakar Wedding',
         available: true
@@ -24,7 +24,6 @@ const PRODUCTS_DATA = [
         name: 'Robe de Gala "Or Impérial"',
         price: 90000,
         category: 'ROBES_SOIREE',
-        // uploaded_image_1 (Robe dorée traine)
         image: '/images/collection/soiree-dore.jpg',
         brand: 'Sénégal Chic',
         available: true
@@ -34,7 +33,6 @@ const PRODUCTS_DATA = [
         name: 'Robe Mariée "Sirène Almadies"',
         price: 120000,
         category: 'MARIAGE',
-        // uploaded_image_2
         image: '/images/collection/mariage-sirene.jpg',
         brand: 'Prestige Dakar',
         available: true
@@ -44,7 +42,6 @@ const PRODUCTS_DATA = [
         name: 'Ensemble Traditionnel "Walo"',
         price: 65000,
         category: 'BOUBOUS',
-        // uploaded_image_3 (Orange dentelle)
         image: '/images/collection/tradition-orange.jpg',
         brand: 'Touba Couture',
         available: true
@@ -54,13 +51,62 @@ const PRODUCTS_DATA = [
         name: 'Robe Kente "Modernity"',
         price: 55000,
         category: 'ROBES_SOIREE',
-        // uploaded_image_4 (Blanc + motif)
         image: '/images/collection/wax-blanc.jpg',
         brand: 'Wax Modern',
         available: true
     },
-    // Je duplique ou garde d'autres pour remplir la grille si besoin, 
-    // mais je privilégie la qualité des 5 images fournies
+
+    // --- SERIE 2 (Nouveaux Uploads - Robes ajustées & Couleurs Vives) ---
+    {
+        id: '6',
+        name: 'Robe Mariée "Divine"',
+        price: 130000,
+        category: 'MARIAGE',
+        // uploaded_image_0 (Manches Longues)
+        image: '/images/collection/mariage-sirene-manches.jpg',
+        brand: 'Dakar Wedding',
+        available: true
+    },
+    {
+        id: '7',
+        name: 'Ensemble Pagne "Soleil"',
+        price: 60000,
+        category: 'BOUBOUS',
+        // uploaded_image_1 (Jaune/Marron)
+        image: '/images/collection/ensemble-pagne-jaune.jpg', // Classé Boubou/Tradition
+        brand: 'Touba Couture',
+        available: true
+    },
+    {
+        id: '8',
+        name: 'Robe Gala "Royale Blue"',
+        price: 80000,
+        category: 'ROBES_SOIREE',
+        // uploaded_image_2 (Bleu Roi)
+        image: '/images/collection/soiree-bleu-roi.jpg',
+        brand: 'Nuit Dakaroise',
+        available: true
+    },
+    {
+        id: '9',
+        name: 'Robe Mariée "Fleur de Lys"',
+        price: 110000,
+        category: 'MARIAGE',
+        // uploaded_image_3 (Satin Blanc Fleur)
+        image: '/images/collection/mariage-satin-fleur.jpg',
+        brand: 'Prestige Dakar',
+        available: true
+    },
+    {
+        id: '10',
+        name: 'Robe Plissée "Lavande"',
+        price: 70000,
+        category: 'ROBES_SOIREE',
+        // uploaded_image_4 (Violet Plissé)
+        image: '/images/collection/soiree-violet-plisse.jpg',
+        brand: 'Sénégal Chic',
+        available: true
+    },
 ];
 
 export default function CollectionPage() {
@@ -158,16 +204,15 @@ export default function CollectionPage() {
                                             width: '100%',
                                             height: '100%',
                                             objectFit: 'cover',
-                                            objectPosition: 'top', // Important pour voir les visages/haut des robes
+                                            objectPosition: 'top', // Voir le haut de la robe
                                             display: 'block',
                                             transition: 'transform 0.5s ease'
                                         }}
                                         className="hover:scale-105"
                                         onError={(e) => {
-                                            // Fallback visuel si souci
                                             (e.target as HTMLImageElement).style.display = 'none';
                                             (e.target as HTMLImageElement).parentElement!.style.backgroundColor = '#f0f0f0';
-                                            (e.target as HTMLImageElement).parentElement!.innerHTML += '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#666;">Image<br/>Indisponible</div>';
+                                            (e.target as HTMLImageElement).parentElement!.innerHTML += '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#666;font-size:12px">Image<br/>Indisponible</div>';
                                         }}
                                     />
 
