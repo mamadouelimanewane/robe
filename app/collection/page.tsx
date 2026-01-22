@@ -6,15 +6,15 @@ import Footer from '@/components/Footer';
 import { Heart } from 'lucide-react';
 import Link from 'next/link';
 
-// DATA MOCKÉE - IMAGES PEXELS (Plus stables pour le hotlinking)
-// Images soigneusment sélectionnées : Femmes africaines, tenues traditionnelles ou de gala.
+// DATA MOCKÉE - SÉLECTION STRICTE 100% FEMMES AFRICAINES
 const PRODUCTS_DATA = [
     {
         id: '1',
         name: 'Robe Sirène "Mame Diarra"',
         price: 70000,
         category: 'ROBES_SOIREE',
-        image: 'https://images.pexels.com/photos/15509130/pexels-photo-15509130.jpeg?auto=compress&cs=tinysrgb&w=800', // Robe noire élégante
+        // Femme noire, robe jaune moutarde, turban
+        image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         brand: 'Sénégal Chic',
         available: true
     },
@@ -23,7 +23,8 @@ const PRODUCTS_DATA = [
         name: 'Grand Boubou "Signarre"',
         price: 55000,
         category: 'BOUBOUS',
-        image: 'https://images.pexels.com/photos/5303015/pexels-photo-5303015.jpeg?auto=compress&cs=tinysrgb&w=800', // Tenue jaune traditionnelle
+        // Femme noire, maquillage traditionnel, bijoux
+        image: 'https://images.unsplash.com/photo-1531123414780-f74242c2b052?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         brand: 'Touba Couture',
         available: true
     },
@@ -32,7 +33,8 @@ const PRODUCTS_DATA = [
         name: 'Robe Mariée "Linguère"',
         price: 85000,
         category: 'MARIAGE',
-        image: 'https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=800', // Mariée
+        // Femme noire, robe blanche/or, élégante
+        image: 'https://images.unsplash.com/photo-1546522306-69a48f6828af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         brand: 'Dakar Wedding',
         available: true
     },
@@ -41,7 +43,8 @@ const PRODUCTS_DATA = [
         name: 'Ensemble Soirée "Terrou-Bi"',
         price: 60000,
         category: 'ROBES_SOIREE',
-        image: 'https://images.pexels.com/photos/1721558/pexels-photo-1721558.jpeg?auto=compress&cs=tinysrgb&w=800', // Robe Rouge
+        // Femme noire, look fashion, peau foncée
+        image: 'https://images.unsplash.com/photo-1523824921061-de82a024d62f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         brand: 'Nuit Dakaroise',
         available: true
     },
@@ -50,7 +53,8 @@ const PRODUCTS_DATA = [
         name: 'Boubou Bazin "Saloum"',
         price: 45000,
         category: 'BOUBOUS',
-        image: 'https://images.pexels.com/photos/1181292/pexels-photo-1181292.jpeg?auto=compress&cs=tinysrgb&w=800', // Headwrap coloré
+        // Femme noire profil, élégance
+        image: 'https://images.unsplash.com/photo-1589156280159-518a5828e859?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         brand: 'Ndar Style',
         available: true
     },
@@ -59,7 +63,8 @@ const PRODUCTS_DATA = [
         name: 'Tenue de Gala "Radisson"',
         price: 65000,
         category: 'ROBES_SOIREE',
-        image: 'https://images.pexels.com/photos/3755918/pexels-photo-3755918.jpeg?auto=compress&cs=tinysrgb&w=800', // Robe bleue
+        // Femme noire, robe colorée
+        image: 'https://images.unsplash.com/photo-1512413914633-b5043f4041ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         brand: 'Prestige Dakar',
         available: true
     },
@@ -68,7 +73,8 @@ const PRODUCTS_DATA = [
         name: 'Ensemble Tradition "Walo"',
         price: 50000,
         category: 'BOUBOUS',
-        image: 'https://images.pexels.com/photos/2085739/pexels-photo-2085739.jpeg?auto=compress&cs=tinysrgb&w=800', // Femme africaine style fashion
+        // Femme noire, focus visage/bijoux
+        image: 'https://images.unsplash.com/photo-1607513549650-07bf115cb982?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         brand: 'Wax Modern',
         available: true
     },
@@ -77,7 +83,8 @@ const PRODUCTS_DATA = [
         name: 'Robe Cérémonie "Or"',
         price: 75000,
         category: 'MARIAGE',
-        image: 'https://images.pexels.com/photos/2512142/pexels-photo-2512142.jpeg?auto=compress&cs=tinysrgb&w=800', // Femme voilée elégante
+        // Femme noire, tenue soirée
+        image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         brand: 'Prestige Dakar',
         available: true
     },
@@ -112,11 +119,11 @@ export default function CollectionPage() {
                         Notre Collection Exclusive
                     </h1>
                     <p style={{ color: '#666', fontSize: '16px' }}>
-                        L'élégance sénégalaise pour vos plus beaux événements
+                        L'élégance de la femme africaine
                     </p>
                 </div>
 
-                {/* FILTRES */}
+                {/* FILTRES - Mieux stylisés */}
                 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '50px', flexWrap: 'wrap', gap: '15px' }}>
                     {categories.map((cat) => (
                         <button
@@ -203,7 +210,7 @@ export default function CollectionPage() {
                                         <Heart size={16} color="#333" />
                                     </div>
 
-                                    {/* Availability Badge for visual confirmation */}
+                                    {/* Availability Badge */}
                                     <div style={{
                                         position: 'absolute',
                                         bottom: '10px',
@@ -215,7 +222,7 @@ export default function CollectionPage() {
                                         fontWeight: 'bold',
                                         textTransform: 'uppercase'
                                     }}>
-                                        {product.category}
+                                        {product.category === 'ROBES_SOIREE' ? 'Soirée' : product.category === 'BOUBOUS' ? 'Boubou' : product.category}
                                     </div>
                                 </div>
 
