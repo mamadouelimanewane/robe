@@ -6,89 +6,61 @@ import Footer from '@/components/Footer';
 import { Heart } from 'lucide-react';
 import Link from 'next/link';
 
-// DATA MOCKÉE - PHOTOS PRODUITS UNIQUEMENT (Pas de mannequins)
-// Focus sur les tissus, les coupes et les motifs africains
+// DATA MOCKÉE - IMAGES LOCALES UPLOADÉES PAR L'UTILISATEUR
+// 100% Fidélité au contenu souhaité
 const PRODUCTS_DATA = [
     {
         id: '1',
-        name: 'Robe Sirène "Mame Diarra"',
-        price: 70000,
-        category: 'ROBES_SOIREE',
-        // Robe Rouge/Or sur cintre ou détail tissu
-        image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        brand: 'Sénégal Chic',
-        available: true
-    },
-    {
-        id: '2',
-        name: 'Grand Boubou "Signarre"',
-        price: 55000,
-        category: 'BOUBOUS',
-        // Tissus Bazin pliés colorés
-        image: 'https://images.unsplash.com/photo-1607062483866-9b047a06368d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        brand: 'Touba Couture',
-        available: true
-    },
-    {
-        id: '3',
-        name: 'Robe Mariée "Linguère"',
-        price: 85000,
+        name: 'Robe Mariée "Princesse Yaye"',
+        price: 150000,
         category: 'MARIAGE',
-        // Détail robe blanche dentelle
-        image: 'https://images.unsplash.com/photo-1594552072238-b8a33785b261?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        // uploaded_image_0
+        image: '/images/collection/mariage-princesse.jpg',
         brand: 'Dakar Wedding',
         available: true
     },
     {
+        id: '2',
+        name: 'Robe de Gala "Or Impérial"',
+        price: 90000,
+        category: 'ROBES_SOIREE',
+        // uploaded_image_1 (Robe dorée traine)
+        image: '/images/collection/soiree-dore.jpg',
+        brand: 'Sénégal Chic',
+        available: true
+    },
+    {
+        id: '3',
+        name: 'Robe Mariée "Sirène Almadies"',
+        price: 120000,
+        category: 'MARIAGE',
+        // uploaded_image_2
+        image: '/images/collection/mariage-sirene.jpg',
+        brand: 'Prestige Dakar',
+        available: true
+    },
+    {
         id: '4',
-        name: 'Ensemble Bazin "Terrou-Bi"',
-        price: 60000,
+        name: 'Ensemble Traditionnel "Walo"',
+        price: 65000,
         category: 'BOUBOUS',
-        // Tissu violet/or riche
-        image: 'https://images.unsplash.com/photo-1574205562095-8d76df42371a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        brand: 'Nuit Dakaroise',
+        // uploaded_image_3 (Orange dentelle)
+        image: '/images/collection/tradition-orange.jpg',
+        brand: 'Touba Couture',
         available: true
     },
     {
         id: '5',
-        name: 'Boubou Brodé "Saloum"',
-        price: 45000,
-        category: 'BOUBOUS',
-        // Détail broderie or
-        image: 'https://images.unsplash.com/photo-1616685933618-42245f0962b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        brand: 'Ndar Style',
-        available: true
-    },
-    {
-        id: '6',
-        name: 'Robe de Soirée "Radisson"',
-        price: 65000,
+        name: 'Robe Kente "Modernity"',
+        price: 55000,
         category: 'ROBES_SOIREE',
-        // Robe bleue détail
-        image: 'https://images.unsplash.com/photo-1566810245084-5f5020125860?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        brand: 'Prestige Dakar',
-        available: true
-    },
-    {
-        id: '7',
-        name: 'Tissu Wax "Walo"',
-        price: 50000,
-        category: 'BOUBOUS',
-        // Motif Wax vibrant
-        image: 'https://images.unsplash.com/photo-1588691656093-6c0757c2e88b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        // uploaded_image_4 (Blanc + motif)
+        image: '/images/collection/wax-blanc.jpg',
         brand: 'Wax Modern',
         available: true
     },
-    {
-        id: '8',
-        name: 'Parure Mariage "Or"',
-        price: 75000,
-        category: 'MARIAGE',
-        // Bijoux or et tissu
-        image: 'https://images.unsplash.com/photo-1602751584552-8ba43d5c38f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        brand: 'Prestige Dakar',
-        available: true
-    },
+    // Je duplique ou garde d'autres pour remplir la grille si besoin, 
+    // mais je privilégie la qualité des 5 images fournies
 ];
 
 export default function CollectionPage() {
@@ -103,8 +75,8 @@ export default function CollectionPage() {
 
     const categories = [
         { label: 'Tout', value: 'TOUT' },
-        { label: 'Boubous & Bazin', value: 'BOUBOUS' },
-        { label: 'Robes de Soirée', value: 'ROBES_SOIREE' },
+        { label: 'Boubous & Tradition', value: 'BOUBOUS' },
+        { label: 'Soirée & Gala', value: 'ROBES_SOIREE' },
         { label: 'Mariages', value: 'MARIAGE' },
     ];
 
@@ -120,7 +92,7 @@ export default function CollectionPage() {
                         Notre Collection Exclusive
                     </h1>
                     <p style={{ color: '#666', fontSize: '16px' }}>
-                        Découvrez nos tissus d'exception et créations authentiques
+                        Découvrez nos pièces uniques, sélectionnées pour vous
                     </p>
                 </div>
 
@@ -186,12 +158,16 @@ export default function CollectionPage() {
                                             width: '100%',
                                             height: '100%',
                                             objectFit: 'cover',
+                                            objectPosition: 'top', // Important pour voir les visages/haut des robes
                                             display: 'block',
                                             transition: 'transform 0.5s ease'
                                         }}
                                         className="hover:scale-105"
                                         onError={(e) => {
-                                            (e.target as HTMLImageElement).src = 'https://placehold.co/600x900/png?text=Photo+Indisponible';
+                                            // Fallback visuel si souci
+                                            (e.target as HTMLImageElement).style.display = 'none';
+                                            (e.target as HTMLImageElement).parentElement!.style.backgroundColor = '#f0f0f0';
+                                            (e.target as HTMLImageElement).parentElement!.innerHTML += '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#666;">Image<br/>Indisponible</div>';
                                         }}
                                     />
 
